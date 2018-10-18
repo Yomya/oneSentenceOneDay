@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 添加字体 -->
+    <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+  <script type="text/javascript">
+     $youziku.load("body", "c62d7face0864ece9a53137645be7d57", "DroidSans");
+     /*$youziku.load("#id1,.class1,h1", "c62d7face0864ece9a53137645be7d57", "DroidSans");*/
+     /*．．．*/
+     $youziku.draw();
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <p id="hitokoto">:D 获取中...</p>
+  <span>——</span><font id="from">:D 获取中...</font>
+  <p>sajdfhdsadfsjhf jd上课京东方就 上课打飞机看世纪东方</p>
+  <p>sajdfhdsadfsjhf jd上课京东方就 上课打飞机看世纪东方</p>
+  <p>sajdfhdsadfsjhf喜欢的一起饿纪东方</p>
+  <script>
+    fetch('https://v1.hitokoto.cn')
+      .then(function (res){
+        return res.json();
+      })
+      .then(function (data) {
+        var hitokoto = document.getElementById('hitokoto');
+        var from = document.getElementById('from');
+        hitokoto.innerText = data.hitokoto;
+        from.innerText = data.from;
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+      // 详情查看 https://hitokoto.cn/api
+  </script>
+</body>
+</html>
