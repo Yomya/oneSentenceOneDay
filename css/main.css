@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'paofupinyin';
+    src : url('../fonts/paofupinyin.ttf');
+}
+
+body{
+    font-family: 'paofupinyin';
+    font-size: 30px;
+    background:
+}
