@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.1.3/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>OneDayOneSentence for Miss snow</title>
 </head>
 <body>
   <p id="hitokoto">:D 获取中...</p>
-  <span>——</span><font id="from">:D 获取中...</font>
-  <p>sajdfhdsadfsjhf jd上课京东方就 上课打飞机看世纪东方</p>
-  <p>sajdfhdsadfsjhf jd上课京东方就 上课打飞机看世纪东方</p>
-  <p>sajdfhdsadfsjhf喜欢的一起饿纪东方</p>
+  <div class="quoteS"><span>——</span><font id="from">:D 获取中...</font></div>
+  <h2>每日笑话</h2>
+  <div id="joke"></div>
   <script>
     fetch('https://v1.hitokoto.cn')
       .then(function (res){
@@ -28,6 +28,26 @@
         console.error(err);
       })
       // 详情查看 https://hitokoto.cn/api
+      // 笑话
+      fetch('https://api.isoyu.com/index.php/api/joke/index?page=10')
+        .then(function (res){
+          return res.json();
+        })
+        .then(function (data) {
+          var joke = document.getElementById('joke');
+          for(var d in data.data){
+            var p=document.createElement("p");
+              p.id="spanid";
+              p.style.color="gray";
+              b=parseInt(parseInt(d)+1);
+              p.innerHTML= '<p>'+b+'. '+data.data[d].title+'</p>'+'<div class="quoteS">'+'——'+data.data[d].source+'</div>';
+              joke.appendChild(p);
+          }
+
+        })
+        .catch(function (err) {
+          console.error(err);
+        })
   </script>
 </body>
 </html>
