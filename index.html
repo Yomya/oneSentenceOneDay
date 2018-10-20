@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/124248/45824/5bcac6f6f629d816fc47c743.css' rel='stylesheet' type='text/css' />
   <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.1.3/css/bootstrap-grid.css">
   <link rel="stylesheet" href="css/main.css">
   <title>OneDayOneSentence for Miss snow</title>
@@ -11,7 +12,7 @@
 <body>
   <p id="hitokoto">:D 获取中...</p>
   <div class="quoteS"><span>——</span><font id="from">:D 获取中...</font></div>
-  <h2>每日笑话</h2>
+  <h2 class="css153542797f1e558">每日段子</h2>
   <div id="joke"></div>
   <script>
     fetch('https://v1.hitokoto.cn')
@@ -40,7 +41,7 @@
               p.id="spanid";
               p.style.color="gray";
               b=parseInt(parseInt(d)+1);
-              p.innerHTML= '<p>'+b+'. '+data.data[d].title+'</p>'+'<div class="quoteS">'+'——'+data.data[d].source+'</div>';
+              p.innerHTML= '<p>'+b+'. '+data.data[d].digest+'</p>'+'<div class="quoteS">'+'——'+data.data[d].source+'</div>';
               joke.appendChild(p);
           }
 
