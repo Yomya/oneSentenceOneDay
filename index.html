@@ -15,6 +15,8 @@
   <div class="quoteS"><span>——</span><font id="from">:D 获取中...</font></div>
   <h2 class="css153542797f1e558">每日段子</h2>
   <div id="joke"></div>
+  <div id="city"></div>
+  <div id="weather"></div>
   <script>
     fetch('https://v1.hitokoto.cn')
       .then(function (res){
@@ -50,6 +52,20 @@
         .catch(function (err) {
           console.error(err);
         })
+        // 天气
+        fetch('http://www.weather.com.cn/data/cityinfo/101190408.html')
+          .then(function (res){
+            return res.json();
+          })
+          .then(function (data) {
+            var city = document.getElementById('city');
+            var weather = document.getElementById('weather');
+            city.innerText = data.weatherinfo.city;
+            weather.innerText = data.weatherinfo.weather;
+          })
+          .catch(function (err) {
+            console.error(err);
+          })
   </script>
 </body>
 </html>
