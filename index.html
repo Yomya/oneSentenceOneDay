@@ -10,18 +10,31 @@
   <title>OneDayOneSentence for Miss snow</title>
 </head>
 <body class="mdui-bottom-nav-fixed">
-  <img class="rounded full-width" src="img/top.jpg" alt="">
-  <div class="container">
-    <div class="card">
+  <img class=" full-width" src="img/top.jpg" alt="">
+<!-- 标题 -->
+<div class="sect-header mdui-text-center">
+  <div class="sect-title">
+    <i class="mdui-icon material-icons">&#xe616;</i>
+    每日一句
+  </div>
+  <p class="sect-slogan mdui-center">One Sentence One Day</p>
+
+</div>
+<!-- 每日段子卡片 -->
       <div class="card-body">
         <h2 id="hitokoto">:D 获取中...</h2>
-        <div class="quoteS"><span>——</span><font id="from">:D 获取中...</font></div>
+        <div class="quoteS" style="font-size:24px;"><span>——</span><font id="from">:D 获取中...</font></div>
       </div>
-    </div>
+
+  <!-- 标题 -->
+  <div class="sect-header mdui-text-center">
+      <div class="sect-title">
+          <i class="mdui-icon material-icons">&#xe616;</i>
+          每日段子
+      </div>
+      <p class="sect-slogan mdui-center"> Today's Jokes</p>
   </div>
-<button type="button" class="btn mdui-btn-primary">Primary</button>
-  <h1 >每日段子</h1>
-  <div id="joke"></div>
+  <div class="mdui-m-x-1" id="joke"></div>
   <div id="city"></div>
   <div id="weather"></div>
   <div id="temp"></div>
@@ -68,7 +81,7 @@
               p.id="spanid";
               p.style.color="gray";
               b=parseInt(parseInt(d)+1);
-              p.innerHTML= '<p>'+b+'. '+data.data[d].digest+'</p>'+'<div class="quoteS">'+'——'+data.data[d].source+'</div>';
+              p.innerHTML= '<p class="joke">'+b+'. '+data.data[d].digest+'</p>'+'<div class="quoteS">'+'——'+data.data[d].source+'</div>';
               joke.appendChild(p);
           }
 

@@ -1,8 +1,15 @@
 .quoteS {
 
 text-align: right;
-color: #999;；
+color: #999;
+font-size: 18px;
+padding: 15px;
+margin-top: -25px;
 }
+.joke {
+  color: #515151;
+}
+/* 字体 */
 @font-face{
     font-family: 'HYZhangJTJ';
     src : url("HYZhangJTJ.woff2") format("woff2");
@@ -14,15 +21,43 @@ body{
     font-family: 'HYZhangJTJ';
     font-size: 24px;
 }
-/* h2 {
+h2 {
   color: #515151;
-  font-size: 50px;
-  border-radius: 5px;
-  border: solid 1px #999;
+  font-size: 36px;
+  /* border-radius: 5px;
+  border: solid 1px #999; */
   margin: 10px;
-  padding: 10px;
+  margin-bottom: 20px;
   text-align: center;
-} */
-.full-width {
+  font-weight: normal;
+}
+img.full-width {
   width: 100%;
+
+}
+h1 {
+  font-family: "微软雅黑";
+  font-size: 28px;
+  margin-left: 8px;
+}
+.sect-slogan {
+  font-size: 16px;
+  color: #666;
+}
+.sect-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sect-title i {
+  font-size: 30px;
+}
+.sect-header {
+  margin: 90px 8px;
+  margin-bottom: 30px; 
+
+}
+
+.sect-slogan {
+margin-bottom: 20px;
+margin-top: 0px;
 }
