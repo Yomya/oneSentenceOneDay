@@ -12,7 +12,7 @@ color: #999;；
 
 body{
     font-family: 'HYZhangJTJ';
-
+    font-size: 24px;
 }
 /* h2 {
   color: #515151;
@@ -23,6 +23,6 @@ body{
   padding: 10px;
   text-align: center;
 } */
-img{
+.full-width {
   width: 100%;
 }

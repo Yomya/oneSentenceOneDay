@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.1.3/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
   <title>OneDayOneSentence for Miss snow</title>
 </head>
-<body>
+<body class="mdui-bottom-nav-fixed">
   <img class="rounded" src="img/top.jpg" alt="">
   <div class="container">
     <div class="card">
@@ -17,13 +18,29 @@
         <div class="quoteS"><span>——</span><font id="from">:D 获取中...</font></div>
       </div>
     </div>
-
   </div>
+<button type="button" class="btn mdui-btn-primary">Primary</button>
   <h1 >每日段子</h1>
   <div id="joke"></div>
   <div id="city"></div>
   <div id="weather"></div>
   <div id="temp"></div>
+<!-- 底部导航栏 -->
+    <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white">
+    <a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+      <i class="mdui-icon material-icons">history</i>
+      <label>Recents</label>
+    </a>
+    <a href="javascript:;" class="mdui-ripple">
+      <i class="mdui-icon material-icons">favorite</i>
+      <label>Favorites</label>
+    </a>
+    <a href="javascript:;" class="mdui-ripple">
+      <i class="mdui-icon material-icons">location_on</i>
+      <label>Nearby</label>
+    </a>
+  </div>
+  <!-- 接口获取脚本 -->
   <script>
     fetch('https://v1.hitokoto.cn')
       .then(function (res){
