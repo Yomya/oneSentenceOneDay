@@ -5,12 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
-<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+  <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+  <script src="js/TouchSlide.1.1.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/main.css">
   <title>OneDayOneSentence for Miss snow</title>
 </head>
 <body class="mdui-bottom-nav-fixed">
   <img class=" full-width" src="img/top.jpg" alt="">
+  <!-- 幻灯片 -->
+  <div id="focus" class="focus">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul>
+							<li><a href="#"><img _src="img/top2.png" src="img/blank.png" /></a></li>
+							<li><a href="#"><img _src="img/top2.png" src="img/blank.png"/></a></li>
+							<li><a href="#"><img _src="img/top2.png" src="img/blank.png"/></a></li>
+					</ul>
+				</div>
+			</div>
+      <script type="text/javascript">
+				TouchSlide({
+					slideCell:"#focus",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul",
+					effect:"left",
+					autoPlay:true,//自动播放
+					autoPage:true, //自动分页
+					switchLoad:"_src" //切换加载，真实图片路径为"_src"
+				});
+			</script>
+
+
 <!-- 标题 -->
 <div class="sect-header mdui-text-center">
   <div class="sect-title">
@@ -29,7 +56,7 @@
   <!-- 标题 -->
   <div class="sect-header mdui-text-center">
       <div class="sect-title">
-          <i class="mdui-icon material-icons">&#xe616;</i>
+          <i class="mdui-icon material-icons">&#xe815;</i>
           每日段子
       </div>
       <p class="sect-slogan mdui-center"> Today's Jokes</p>
