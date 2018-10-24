@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+  <style media="screen">
+    body{margin:0; padding:0;}
+  </style>
+</head>
+<iframe src="http://mp.weixin.qq.com/mp/homepage?__biz=MzI2MTA1NDU5MQ==&hid=1&sn=d718c0b9b5a410f099b790f79751d691&scene=18#wechat_redirect"  id="myiframe" scrolling="no" onload="changeFrameHeight()" frameborder="0"></iframe>
+<!-- 使iframe适应高度 -->
+  <script type="text/javascript">
+  function changeFrameHeight(){
+        var ifm= document.getElementById("iframepage");
+        ifm.height=document.documentElement.clientHeight;
+
+      }
+
+      window.onresize=function(){
+         changeFrameHeight();
+
+      }
+  </script>
+<!-- 底部导航栏 -->
+<div data-step="5" data-intro=`老婆这里底部，可以切换的哟哦，猜猜会有什么呢!那么呢，介绍就是这里了，点击方块右下角的结束吧!o(ﾟДﾟ)っ！>
+    <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white" >
+    <a href="index.html" class="mdui-ripple mdui-bottom-nav-active" >
+      <i class="mdui-icon material-icons">history</i>
+      <label>Recents</label>
+    </a>
+    <a href="javascript:;" class="mdui-ripple">
+      <i class="mdui-icon material-icons">favorite</i>
+      <label>Favorites</label>
+    </a>
+    <a href="javascript:;" class="mdui-ripple">
+      <i class="mdui-icon material-icons">location_on</i>
+      <label>Nearby</label>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
