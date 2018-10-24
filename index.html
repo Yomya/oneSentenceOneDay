@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
   <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+
   <script src="js/TouchSlide.1.1.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/main.css">
   <title>OneDayOneSentence for Miss snow</title>
 </head>
 <body class="mdui-bottom-nav-fixed">
-  <img class=" full-width" src="img/top.jpg" alt="">
+  <img class=" full-width" src="img/top.jpg" data-step="1" data-intro="小真真，这里是冰淇淋呢，还有奶茶果汁，还有我爱你呢，满满是甜蜜的回忆，虽然图片变不了，但是不是也棒棒哒♪(･ω･)ﾉ!点击下一步继续看完吧！">
   <!-- 幻灯片 -->
-  <div id="focus" class="focus">
+  <div id="focus" class="focus" data-step="2" data-intro="`这里是小小的滚动相册呢，我找了几张好看的图片放在这里
+  啦!(✪ω✪) 如果你觉得不好看，可以给我提议哦，会马上改的呢！ 对啦，点击一下照片，说不会有奇迹发生额get！٩( 'ω' )و `">
 				<div class="hd">
 					<ul></ul>
 				</div>
@@ -36,8 +40,24 @@
 					switchLoad:"_src" //切换加载，真实图片路径为"_src"
 				});
 			</script>
+<!-- 步骤演示 -->
+<button class="mdui-btn mdui-btn-icon mdui-btn-raised mdui-ripple tips" onclick="guide()" type="button" name="button"><i class="mdui-icon material-icons">&#xe625;</i></button>
 
-
+<script type="text/javascript">
+//访问引导页
+function guide() {
+  introJs().setOptions({
+      prevLabel: "上一步",
+      nextLabel: "下一步",
+      skipLabel: "我知道了",
+      doneLabel: "结束"
+  }).oncomplete(function () {
+      //点击跳过按钮后执行的事件
+  }).onexit(function () {
+      //点击结束按钮后， 执行的事件
+  }).start();
+}
+</script>
 <!-- 标题 -->
 <div class="sect-header mdui-text-center">
   <div class="sect-title">
@@ -47,27 +67,29 @@
   <p class="sect-slogan mdui-center">One Sentence One Day</p>
 
 </div>
-<!-- 每日段子卡片 -->
-      <div class="card-body">
+<!-- 每日一句卡片 -->
+      <div class="card-body" data-step="3" data-intro="`老婆，爱你呀，这里是每天一句呢，希望你看到会有启发，或者会有好的心情!
+      虽然说是每天一句，其实是一刷新就会有呢,没事的时候就刷刷看呀(￢_￢)瞄`">
         <h2 id="hitokoto">:D 获取中...</h2>
         <div class="quoteS" style="font-size:24px;"><span>——</span><font id="from">:D 获取中...</font></div>
       </div>
 
   <!-- 标题 -->
-  <div class="sect-header mdui-text-center">
+  <div class="sect-header mdui-text-center" data-step="4" data-intro="这里是每日段子呢，希望老婆看了呢笑一笑，会更开心嗯!不过，会不会嫌弃太长不看呢，愁呢_(:ι」∠)_好饿，但是不想动">
       <div class="sect-title">
           <i class="mdui-icon material-icons">&#xe815;</i>
           每日段子
       </div>
-      <p class="sect-slogan mdui-center"> Today's Jokes</p>
+      <p class="sect-slogan mdui-center" > Today's Jokes</p>
   </div>
-  <div class="mdui-m-x-1" id="joke"></div>
+  <div class="mdui-m-x-1" id="joke" ></div>
   <div id="city"></div>
   <div id="weather"></div>
   <div id="temp"></div>
 <!-- 底部导航栏 -->
-    <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white">
-    <a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active">
+<div data-step="5" data-intro=`老婆这里底部，可以切换的哟哦，猜猜会有什么呢!那么呢，介绍就是这里了，点击方块右下角的结束吧!o(ﾟДﾟ)っ！>
+    <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white" >
+    <a href="javascript:;" class="mdui-ripple mdui-bottom-nav-active" >
       <i class="mdui-icon material-icons">history</i>
       <label>Recents</label>
     </a>
@@ -80,6 +102,7 @@
       <label>Nearby</label>
     </a>
   </div>
+</div>
   <!-- 接口获取脚本 -->
   <script>
     fetch('https://v1.hitokoto.cn')
