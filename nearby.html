@@ -6,14 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
   <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
   <style media="screen">
-    body{margin:0; padding:0;}
+    .nearby-s {
+      margin:100px 40px;
+      margin-top: 50px;
+      font-size:28px;
+    }
+    #icon-alert {
+      display:block;
+      margin: 100px auto;
+      margin-bottom:10px;
+      font-size: 100px;
+      color: rgb(230, 62, 17);
+    }
   </style>
 </head>
 <body class="mdui-bottom-nav-fixed">
-<iframe src="http://mp.weixin.qq.com/mp/homepage?__biz=MzI2MTA1NDU5MQ==&hid=1&sn=d718c0b9b5a410f099b790f79751d691&scene=18#wechat_redirect" id="iframepage"  frameBorder=0 scrolling=no height="640px" width="100%"></iframe>
-<!-- 使iframe适应高度 -->
+<i id="icon-alert" class="mdui-icon material-icons">&#xe14b;</i>
+<div class="nearby-s ">
 
+  这里还没想好开发什么呢，真真又什么想法没有啊？不如放老婆美美的照片大图，怎么样啊？
+</div>
 <!-- 底部导航栏 -->
 <div>
     <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white" >
@@ -21,11 +35,11 @@
       <i class="mdui-icon material-icons">history</i>
       <label>Recents</label>
     </a>
-    <a href="javascript:;" class="mdui-ripple">
+    <a href="favorite.html" class="mdui-ripple">
       <i class="mdui-icon material-icons">favorite</i>
       <label>Favorites</label>
     </a>
-    <a href="nearby.html" class="mdui-ripple">
+    <a href="javascript:;" class="mdui-ripple">
       <i class="mdui-icon material-icons">location_on</i>
       <label>Nearby</label>
     </a>

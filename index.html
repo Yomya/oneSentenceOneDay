@@ -14,18 +14,18 @@
   <title>OneDayOneSentence for Miss snow</title>
 </head>
 <body class="mdui-bottom-nav-fixed">
-  <img class=" full-width" src="img/top.jpg" data-step="1" data-intro="小真真，这里是冰淇淋呢，还有奶茶果汁，还有我爱你呢，满满是甜蜜的回忆，虽然图片变不了，但是不是也棒棒哒♪(･ω･)ﾉ!点击下一步继续看完吧！">
+  <img class=" full-width" src="img/top.jpg" data-step="2" data-intro="小真真，这里是冰淇淋呢，还有奶茶果汁，还有我爱你呢，满满是甜蜜的回忆，虽然图片变不了，但是不是也棒棒哒♪(･ω･)ﾉ!">
   <!-- 幻灯片 -->
-  <div id="focus" class="focus" data-step="2" data-intro="`这里是小小的滚动相册呢，我找了几张好看的图片放在这里
-  啦!(✪ω✪) 如果你觉得不好看，可以给我提议哦，会马上改的呢！ 对啦，点击一下照片，说不会有奇迹发生额get！٩( 'ω' )و `">
+  <div id="focus" class="focus" data-step="1" data-intro="真真来啦呀！<br /><br />听老公来介绍一下吧!这里是小小的滚动相册呢，我找了几张好看的图片放在这里
+  啦!(✪ω✪) 如果你觉得不好看，可以给我提议哦，会马上改的呢！ 对啦，点击一下照片，说不会有奇迹发生额get！٩( 'ω' )و <br /><br />点击下一步继续看完吧！">
 				<div class="hd">
 					<ul></ul>
 				</div>
 				<div class="bd">
 					<ul>
-							<li><a href="#"><img _src="img/top2.png" src="img/blank.png" /></a></li>
-							<li><a href="#"><img _src="img/top2.png" src="img/blank.png"/></a></li>
-							<li><a href="#"><img _src="img/top2.png" src="img/blank.png"/></a></li>
+							<li><a href="#"><img _src="img/top1.jpg" src="img/blank.png" /></a></li>
+							<li><a href="#"><img _src="img/top2.jpg" src="img/blank.png"/></a></li>
+							<li><a href="#"><img _src="img/top3.jpg" src="img/blank.png"/></a></li>
 					</ul>
 				</div>
 			</div>
@@ -45,6 +45,7 @@
 
 <script type="text/javascript">
 //访问引导页
+
 function guide() {
   introJs().setOptions({
       prevLabel: "上一步",
@@ -93,15 +94,20 @@ function guide() {
       <i class="mdui-icon material-icons">history</i>
       <label>Recents</label>
     </a>
-    <a href="favorite.html" class="mdui-ripple">
+    <a href="favorite.html"  class="mdui-ripple">
       <i class="mdui-icon material-icons">favorite</i>
       <label>Favorites</label>
     </a>
-    <a href="javascript:;" class="mdui-ripple">
+    <a href="nearby.html" class="mdui-ripple">
       <i class="mdui-icon material-icons">location_on</i>
       <label>Nearby</label>
     </a>
   </div>
+  <!-- 加载时调用引导 -->
+  <script type="text/javascript">
+    onload = guide();
+
+  </script>
 </div>
   <!-- 接口获取脚本 -->
   <script>
@@ -140,57 +146,7 @@ function guide() {
           console.error(err);
         })
         // 天气
-        var weatherArr={
-    "10": "暴雨",
-    "11": "大暴雨",
-    "12": "特大暴雨",
-    "13": "阵雪",
-    "14": "小雪",
-    "15": "中雪",
-    "16": "大雪",
-    "17": "暴雪",
-    "18": "雾",
-    "19": "冻雨",
-    "20": "沙尘暴",
-    "21": "小到中雨",
-    "22": "中到大雨",
-    "23": "大到暴雨",
-    "24": "暴雨到大暴雨",
-    "25": "大暴雨到特大暴雨",
-    "26": "小到中雪",
-    "27": "中到大雪",
-    "28": "大到暴雪",
-    "29": "浮尘",
-    "30": "扬沙",
-    "31": "强沙尘暴",
-    "53": "霾",
-    "99": "",
-    "00": "晴",
-    "01": "多云",
-    "02": "阴",
-    "03": "阵雨",
-    "04": "雷阵雨",
-    "05": "雷阵雨伴有冰雹",
-    "06": "雨夹雪",
-    "07": "小雨",
-    "08": "中雨",
-    "09": "大雨"
-};
-        fetch(' http://mobile.weather.com.cn/data/forecast/101200101.html?_=1381891660081')
-          .then(function (res){
-            return res.json();
-          })
-          .then(function (data) {
-            var city = document.getElementById('city');
-            var weather = document.getElementById('weather');
-            var temp = document.getElementById('temp');
-            city.innerText = data.c.c5;
-            weather.innerText = weatherArr[data.f.f1[0].fa]+weatherArr[data.f.f1[0].fb];
-            temp.innerText = data.f.f1[0].fd+'℃~'+data.f.f1[0].fc+'℃';
-          })
-          .catch(function (err) {
-            console.error(err);
-          })
-  </script>
+</script>
+
 </body>
 </html>
