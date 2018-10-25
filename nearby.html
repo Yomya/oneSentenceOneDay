@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/css/mdui.min.css">
   <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
@@ -21,30 +21,65 @@
       color: rgb(230, 62, 17);
     }
   </style>
+  <style type="text/css">
+  html{height:100%}
+  body{height:100%;margin:0px;padding:0px}
+  #container{height:100%}
+  </style>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=exPBca096EsCg5GsG40crgK36xk4XDsC">
+  //v3.0版本的引用方式：src="http://api.map.baidu.com/api?v=3.0&ak=您的密钥"
+  </script>
 </head>
 <body class="mdui-bottom-nav-fixed">
-<i id="icon-alert" class="mdui-icon material-icons">&#xe14b;</i>
-<div class="nearby-s ">
 
-  这里还没想好开发什么呢，真真又什么想法没有啊？不如放老婆美美的照片大图，怎么样啊？
-</div>
+<!-- 地图 -->
+  <div id="container"></div>
+  <script type="text/javascript">
+  var map = new BMap.Map("container");
+  // 创建地图实例
+  var point = new BMap.Point(114.095, 30.4675);
+  // 创建点坐标
+  map.centerAndZoom(point, 18);
+  // 初始化地图，设置中心点坐标和地图级别
+  // window.setTimeout(function(){
+  //   map.panTo(new BMap.Point(114.095, 30.4675));
+  // }, 5000);
+      // 5秒后回到中心点
+      // var map = new BMap.Map("container");
+
+
+      // 步行代码
+      	// 百度地图API功能
+  
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+        var driving = new BMap.DrivingRoute(map, {
+            renderOptions: {
+                map: map,
+                autoViewport: true
+            }
+        });
+        var start = new BMap.Point(116.310791, 40.003419);
+        var end = new BMap.Point(116.486419, 39.877282);
+        driving.search(start, end);
+
+  </script>
 <!-- 底部导航栏 -->
-<div>
-    <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white" >
-    <a href="index.html" class="mdui-ripple mdui-bottom-nav-active" >
-      <i class="mdui-icon material-icons">history</i>
-      <label>Recents</label>
-    </a>
-    <a href="favorite.html" class="mdui-ripple">
-      <i class="mdui-icon material-icons">favorite</i>
-      <label>Favorites</label>
-    </a>
-    <a href="javascript:;" class="mdui-ripple">
-      <i class="mdui-icon material-icons">location_on</i>
-      <label>Nearby</label>
-    </a>
+  <div>
+      <div class="mdui-bottom-nav mdui-bottom-nav-scroll-hide mdui-bottom-nav-text-auto mdui-color-white" >
+      <a href="index.html" class="mdui-ripple mdui-bottom-nav-active" >
+        <i class="mdui-icon material-icons">history</i>
+        <label>Recents</label>
+      </a>
+      <a href="favorite.html" class="mdui-ripple">
+        <i class="mdui-icon material-icons">favorite</i>
+        <label>Favorites</label>
+      </a>
+      <a href="javascript:;" class="mdui-ripple">
+        <i class="mdui-icon material-icons">location_on</i>
+        <label>Nearby</label>
+      </a>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
